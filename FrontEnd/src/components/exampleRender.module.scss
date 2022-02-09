@@ -1,25 +1,14 @@
 .container {
-  padding: 50px;
+  padding: 0px 50px 50px;
   display: flex;
   align-content: center;
   flex-direction: column;
   justify-content: center;
 
-  li {
+  .render_example {
     background-color: white;
-    list-style-type: none;
-    display: flex;
-    .icon {
-      width: 39px;
-      height: auto;
-      svg {
-        width: 39px;
-      }
-    }
-    .criteria {
-      padding: 5px;
-      font-size: 24px;
-    }
+    padding: 5px;
+    font-size: 24px;
   }
 
   .title {
@@ -27,5 +16,6 @@
     font-size: 36px;
     font-weight: 600;
     text-align: center;
+    padding: 15px;
   }
 }

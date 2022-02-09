@@ -1,6 +1,12 @@
 import styles from "./searchButton.module.scss";
 
 export function SearchButton() {
+  // Get input from user in search field
+  function getData(val) {
+    const website = val.target.value.toString();
+    console.log(website);
+  }
+
   return (
     <>
       <link
@@ -19,6 +25,7 @@ export function SearchButton() {
             name="search"
             placeholder="Search..."
             className={styles.search_input}
+            onChange={getData}
           />
           <a href="#" class={styles.search_btn}>
             <i className={styles.fas}></i>

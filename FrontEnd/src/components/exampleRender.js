@@ -15,7 +15,7 @@ export function ExampleRender() {
     <>
       <div className={styles.container}>
         <div className={styles.title}>Example of Rendering with URL</div>
-        <div>
+        <div className={styles.render_example}>
           <a href="#">{URL}</a>
         </div>
       </div>
