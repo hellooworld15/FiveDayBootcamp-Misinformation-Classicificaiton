@@ -1,16 +1,10 @@
-const express = require("express");
-var cors = require("cors");
-const pool = require("./db");
-
-const PORT = process.env.PORT;
-const app = express();
-
-//middleware
-app.use(cors());
-app.use(express.json());
-
-// app.post("/addkeywords", async (req, res) => {
-//     try{
-//         const{}
-//     }
-// })
+// Check keyword exists in database
+export const checkKeyword = async () => {
+  //This variable is just for testing - would pass key words one at a time to this function then check if exists in database
+  const keyword = "checking";
+  if (keyword) {
+    return fetch(`http://127.0.0.1:3001/getKeywords`, {
+      method: "GET",
+    }).then(async (res) => res.json());
+  }
+};

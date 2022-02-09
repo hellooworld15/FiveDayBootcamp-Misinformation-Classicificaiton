@@ -1,7 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { checkKeyword } from "../src/api/index";
 
 function App() {
+  // Testing get data from Database via Backend
+  const checkKeywordValid = async () => {
+    return checkKeyword();
+  };
+
+  checkKeywordValid().then((data) => {
+    console.log(data);
+  });
+
   return (
     <div className="App">
       <header className="App-header">
