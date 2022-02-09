@@ -8,6 +8,7 @@ from selenium.webdriver import ChromeOptions
 from selenium.common.exceptions import NoSuchElementException
 from oauth2client.service_account import ServiceAccountCredentials
 
+
 # Take input from front-end
 link = "https://www.health.nsw.gov.au/"
 options = ChromeOptions()
