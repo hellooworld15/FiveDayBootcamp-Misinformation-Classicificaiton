@@ -2,10 +2,13 @@ import styles from "./searchButton.module.scss";
 
 export function SearchButton() {
   // Get input from user in search field
-  function getData(val) {
-    const website = val.target.value.toString();
-    console.log(website);
-  }
+  const handleKeyPress = (e) => {
+    // console.log(e);
+    if (e.key === "Enter") {
+      const website = e.target.value;
+      // console.log(website);
+    }
+  };
 
   return (
     <>
@@ -25,7 +28,7 @@ export function SearchButton() {
             name="search"
             placeholder="Search..."
             className={styles.search_input}
-            onChange={getData}
+            onKeyPress={handleKeyPress}
           />
           <a href="#" class={styles.search_btn}>
             <i className={styles.fas}></i>
