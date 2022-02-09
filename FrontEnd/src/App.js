@@ -16,7 +16,8 @@ function App() {
     <div className={styles.App}>
       <div className={styles.container}>
         <h1>IDEA NAME HERE</h1>
-        <SearchButton /> <CriteriaRender />
+        <SearchButton />
+        <CriteriaRender />
         {/* <CriteriaRender /> */}
       </div>
     </div>
