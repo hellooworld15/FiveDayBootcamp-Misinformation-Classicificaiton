@@ -2,6 +2,7 @@ import styles from "./App.module.scss";
 import { checkKeyword } from "../src/api/index";
 import { SearchButton } from "./components/searchButton";
 import { CriteriaRender } from "./components/criteriaRender";
+import { ExampleRender } from "./components/exampleRender";
 function App() {
   // Testing get data from Database via Backend
   const checkKeywordValid = async () => {
@@ -18,6 +19,7 @@ function App() {
         <h1>IDEA NAME HERE</h1>
         <SearchButton />
         <CriteriaRender />
+        <ExampleRender />
         {/* <CriteriaRender /> */}
       </div>
     </div>
