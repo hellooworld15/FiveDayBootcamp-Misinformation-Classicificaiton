@@ -1,23 +1,33 @@
 import styles from "./criteriaRender.module.scss";
+import { TiTick } from "react-icons/ti";
+import { ImCross } from "react-icons/im";
 
 export function CriteriaRender() {
-  const criteriaPassed = {
+  const criteria = {
     easeOfUse: true,
-    trustedOrganisation: true,
+    trustedOrganisation: false,
   };
 
   return (
     <>
-      <div>Criteria Passed</div>
-      {Object.keys(criteriaPassed).map((key) => {
-        console.log(key);
-        return (
-          <li className={styles.row} key={key}>
-            <div className={styles.icon}></div>
-            <div>{`${key}: ${criteriaPassed[key].toString()}`}</div>
-          </li>
-        );
-      })}
+      <div className={styles.container}>
+        <div className={styles.title}>Criteria Passed</div>
+        <ul>
+          {Object.keys(criteria).map((key) => {
+            console.log(key);
+            return (
+              <li className={styles.row} key={key}>
+                <div className={styles.icon}>
+                  {criteria[key] ? <TiTick /> : <ImCross />}
+                </div>
+                <div className={styles.criteria}>{`${key}: ${criteria[
+                  key
+                ].toString()}`}</div>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </>
   );
 }
