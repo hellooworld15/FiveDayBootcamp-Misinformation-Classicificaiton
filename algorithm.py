@@ -7,13 +7,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver import ChromeOptions
 from selenium.common.exceptions import NoSuchElementException
 from oauth2client.service_account import ServiceAccountCredentials
-import gspread
-import json
-
-scopes = [
-'https://www.googleapis.com/auth/spreadsheets',
-'https://www.googleapis.com/auth/drive'
-]
 
 # Take input from front-end
 link = "https://www.health.nsw.gov.au/"
