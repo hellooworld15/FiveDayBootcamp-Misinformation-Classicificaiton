@@ -19,7 +19,7 @@ function App() {
       <div className={styles.container}>
         <h1>IDEA NAME HERE</h1>
         <SearchButton setState={interceptSetState} />
-        <CriteriaRender />
+        <CriteriaRender state={state} />
         <ExampleRender />
         {/* <CriteriaRender /> */}
       </div>

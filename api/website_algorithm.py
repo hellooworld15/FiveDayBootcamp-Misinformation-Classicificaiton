@@ -66,6 +66,8 @@ def has_external_sources(link):
 
 
 def has_updated(link):
+    print(link)
+    print("ISSUES EREEHHEE")
     updated_date = dt.strptime(find_date(link), "%Y-%m-%d")
     threshold = dt.strptime("2017-02-10", "%Y-%m-%d")
     difference = updated_date - threshold
@@ -123,4 +125,4 @@ def classification_algorithm(link):
 
 
 # Run classification algorithm and send output to results.txt
-classification_algorithm(link)
+# classification_algorithm(link)

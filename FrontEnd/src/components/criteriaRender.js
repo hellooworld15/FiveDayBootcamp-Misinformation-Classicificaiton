@@ -14,7 +14,7 @@ export function CriteriaRender() {
         <div className={styles.title}>Criteria Passed</div>
         <ul>
           {Object.keys(criteria).map((key) => {
-            console.log(key);
+            // console.log(key);
             return (
               <li className={styles.row} key={key}>
                 <div className={styles.icon}>

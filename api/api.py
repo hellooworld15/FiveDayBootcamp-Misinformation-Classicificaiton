@@ -13,13 +13,13 @@ def get_current_time():
     return {"time": time.time()}
 
 
-@app.route("/website")
+@app.route("/website", methods=["POST"])
 def get_website():
     body = request.get_json()
     print("BODY:")
-    print(body["my_url"])
+    URL = "http://" + body["my_url"]
 
-    data = website_algorithm.classification_algorithm("https://www.health.nsw.gov.au/")
+    data = website_algorithm.classification_algorithm(URL)
     print("HI")
     print(data)
     return data

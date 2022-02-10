@@ -11,7 +11,8 @@ export function SearchButton(props) {
     // ISSUE FOR NOW
     if (e.key === "Enter") {
       const website = e.target.value;
-      const data = await getWebsiteData();
+      const webData = { my_url: website };
+      const data = await getWebsiteData(webData);
       console.log(data);
       setState(data);
     }
