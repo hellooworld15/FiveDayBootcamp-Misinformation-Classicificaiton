@@ -1,3 +1,4 @@
+from re import L
 import requests
 import selenium
 import time
@@ -23,16 +24,40 @@ driver.get(link)
 ## 1.  Lets you search past content: Boolean - functionality to search archives with key words
 
 def has_past_content(link):
-  return None
+  return False
 
 ## 2. URL ends in trusted domains (e.g .edu, .org, .gov and .net) or Is a news/trusted organisation
 
-def is_trusted_domain(link):
+def has_trusted_domain(link):
   trusted_domains = ['.edu', '.org', '.gov']
   for i in range(0, len(trusted_domains)):
     if trusted_domains[i] in link:
       print("Trusted.")
+      return True
+  return False
+
+def has_external_sources(link):
+  return False
+
+def has_updated(link):
+  return False
+
+def has_typo_errors(link):
+  return False
 
 ### MODEL
-is_trusted_domain(link)
 
+def classification_algorithm(link):
+  results = [False, False, False, False, False]
+  
+  # Run metric functions
+  results[0] = has_past_content(link)
+  results[1] = has_trusted_domain(link) #Trusted domain
+  results[2] = has_external_sources(link)
+  results[3] = has_updated(link)
+  results[4] = has_typo_errors(link)
+  
+  print(results)
+  return results
+
+classification_algorithm(link)
