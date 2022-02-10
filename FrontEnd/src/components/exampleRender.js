@@ -1,7 +1,7 @@
 import styles from "./exampleRender.module.scss";
 import { TiTick } from "react-icons/ti";
 import { ImCross } from "react-icons/im";
-import image from "./tempImage.png";
+import image from "./logo.png";
 
 export function ExampleRender(props) {
   console.log(props);

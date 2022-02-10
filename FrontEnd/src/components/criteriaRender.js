@@ -1,6 +1,7 @@
 import styles from "./criteriaRender.module.scss";
 import { TiTick } from "react-icons/ti";
 import { ImCross } from "react-icons/im";
+import { IconContext } from "react-icons/lib";
 
 export function CriteriaRender(props) {
   //   console.log(props);
@@ -34,10 +35,22 @@ export function CriteriaRender(props) {
               //   console.log(criteria[key][1]);
               return (
                 <li className={styles.row} key={key}>
-                  <div className={styles.icon}>
-                    {criteria[key][1] ? <TiTick /> : <ImCross />}
+                  <div className={styles.contain}>
+                    <div className={styles.icon}>
+                      <IconContext.Provider
+                        value={
+                          criteria[key][1]
+                            ? { color: "green", size: 30 }
+                            : { color: "red", size: 20 }
+                        }
+                      >
+                        <div>{criteria[key][1] ? <TiTick /> : <ImCross />}</div>
+                      </IconContext.Provider>
+                    </div>
+                    <div
+                      className={styles.criteria}
+                    >{`${criteria[key][0]}`}</div>
                   </div>
-                  <div className={styles.criteria}>{`${criteria[key][0]}`}</div>
                 </li>
               );
             })}
