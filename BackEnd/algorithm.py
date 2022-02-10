@@ -2,7 +2,6 @@ import requests
 import random
 import selenium
 import time
-import pandas as pd
 import json
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
@@ -13,8 +12,6 @@ from spellchecker import SpellChecker
 from bs4 import BeautifulSoup
 from htmldate import find_date
 from datetime import datetime as dt
-
-
 
 # Take input from front-end
 link = "https://www.health.nsw.gov.au/"
