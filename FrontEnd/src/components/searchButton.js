@@ -1,12 +1,20 @@
 import styles from "./searchButton.module.scss";
+import { getWebsiteData } from "../api";
 
-export function SearchButton() {
+export function SearchButton(props) {
+  const { setState } = props;
   // Get input from user in search field
-  const handleKeyPress = (e) => {
+
+  const handleKeyPress = async (e) => {
     // console.log(e);
+
+    // ISSUE FOR NOW
     if (e.key === "Enter") {
       const website = e.target.value;
-      // console.log(website);
+      const webData = { my_url: website };
+      const data = await getWebsiteData(webData);
+      //   console.log(data);
+      setState([data, website]);
     }
   };
 
@@ -21,7 +29,7 @@ export function SearchButton() {
         rel="stylesheet"
       />
 
-      <body>
+      <div className={styles.body}>
         <div className={styles.search_container}>
           <input
             type="text"
@@ -30,11 +38,11 @@ export function SearchButton() {
             className={styles.search_input}
             onKeyPress={handleKeyPress}
           />
-          <a href="#" class={styles.search_btn}>
+          <a href="#" className={styles.search_btn}>
             <i className={styles.fas}></i>
           </a>
         </div>
-      </body>
+      </div>
     </>
   );
 }

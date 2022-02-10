@@ -4,21 +4,42 @@
   align-content: center;
   flex-direction: column;
   justify-content: center;
-
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  ul {
+    margin: 0px;
+    padding: 0px;
+  }
   li {
     background-color: white;
     list-style-type: none;
     display: flex;
+    padding: 6px;
+    justify-content: center;
+
+    .contain {
+      display: flex;
+      width: 70%;
+      justify-content: center;
+    }
     .icon {
       width: 39px;
       height: auto;
+      display: flex;
+      align-items: center;
+      height: 100%;
+
       svg {
         width: 39px;
+        display: block;
+        margin: 0 auto;
       }
     }
     .criteria {
       padding: 5px;
       font-size: 24px;
+      flex-grow: 2;
     }
   }
 
@@ -27,5 +48,6 @@
     font-size: 36px;
     font-weight: 600;
     text-align: center;
+    padding-bottom: 20px;
   }
 }

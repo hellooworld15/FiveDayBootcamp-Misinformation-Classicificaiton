@@ -1,6 +1,6 @@
 // Source : https://freefrontend.com/css-search-boxes/
 
-body {
+.body {
   margin: 0;
   padding: 0;
 
@@ -13,6 +13,7 @@ body {
   background: #fff;
   height: 30px;
   border-radius: 30px;
+  width: 250px;
   padding: 10px 20px;
   display: flex;
   justify-content: center;
@@ -35,7 +36,7 @@ body {
     background: transparent;
     border: none;
     outline: none;
-    width: 0px;
+    // width: 0px;
     font-weight: 500;
     font-size: 16px;
     transition: 0.8s;
