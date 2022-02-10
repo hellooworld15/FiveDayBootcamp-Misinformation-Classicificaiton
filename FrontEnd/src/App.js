@@ -11,7 +11,7 @@ function App() {
 
   const interceptSetState = (data) => {
     setState(data);
-    console.log(data);
+    // console.log(data);
   };
 
   return (

@@ -3,7 +3,7 @@ import { TiTick } from "react-icons/ti";
 import { ImCross } from "react-icons/im";
 
 export function CriteriaRender(props) {
-  console.log(props);
+  //   console.log(props);
   if (props.state) {
     const {
       has_external_sources,
@@ -11,8 +11,8 @@ export function CriteriaRender(props) {
       has_trusted_domain,
       has_typo_errors,
       has_updated,
-    } = props.state;
-    console.log(has_past_content);
+    } = props.state[0];
+    // console.log(has_past_content);
 
     const criteria = {
       criteriaOne: ["Website cites external sources", has_external_sources],
@@ -31,7 +31,7 @@ export function CriteriaRender(props) {
           <div className={styles.title}>Criteria Passed</div>
           <ul>
             {Object.keys(criteria).map((key) => {
-              console.log(criteria[key][1]);
+              //   console.log(criteria[key][1]);
               return (
                 <li className={styles.row} key={key}>
                   <div className={styles.icon}>

@@ -13,8 +13,8 @@ export function SearchButton(props) {
       const website = e.target.value;
       const webData = { my_url: website };
       const data = await getWebsiteData(webData);
-      console.log(data);
-      setState(data);
+      //   console.log(data);
+      setState([data, website]);
     }
   };
 
