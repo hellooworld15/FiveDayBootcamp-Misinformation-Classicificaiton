@@ -68,8 +68,13 @@ export function ExampleRender(props) {
     // console.log(URL);
 
     const onHoverHandler = (e) => {
-      console.log(e);
-      setHidden(!hidden);
+      //   console.log(e);
+      setHidden(false);
+    };
+
+    const onHoverHandlerRemove = (e) => {
+      //   console.log(e);
+      setHidden(true);
     };
 
     return (
@@ -145,7 +150,12 @@ export function ExampleRender(props) {
                 </div>
               </div>
             </div>
-            <img src={image} alt="thisisimage" onClick={onHoverHandler} />
+            <img
+              src={image}
+              alt="thisisimage"
+              onMouseOver={onHoverHandler}
+              onMouseLeave={onHoverHandlerRemove}
+            />
             <a href="#">{URL}</a>
           </div>
         </div>
