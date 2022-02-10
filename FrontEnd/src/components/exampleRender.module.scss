@@ -17,10 +17,11 @@
     position: relative;
     .resultsContainer {
       position: absolute;
-      left: 0px;
-      color: rgb(102, 3, 36);
+      left: -20px;
+      bottom: -100px;
+      color: rgb(70, 1, 24);
 
-      background: rgba(233, 171, 192, 0.9);
+      background: rgba(221, 169, 187, 0.9);
       padding: 10px;
       border-radius: 15px;
       border: rgb(139, 0, 46) 2px solid;
@@ -63,4 +64,8 @@
     text-align: center;
     padding: 15px;
   }
+}
+
+.hidden {
+  opacity: 0;
 }
