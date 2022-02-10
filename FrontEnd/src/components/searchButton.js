@@ -1,23 +1,19 @@
 import styles from "./searchButton.module.scss";
 import { getWebsiteData } from "../api";
-import { useState } from "react";
-import { SettingsInputAntennaTwoTone } from "@material-ui/icons";
 
 export function SearchButton(props) {
+  const { setState } = props;
   // Get input from user in search field
 
-  const handleKeyPress = (e) => {
+  const handleKeyPress = async (e) => {
     // console.log(e);
 
     // ISSUE FOR NOW
     if (e.key === "Enter") {
       const website = e.target.value;
-      const data = getWebsiteData(website);
-      data.then((data) => {
-        console.log(data);
-      });
-
-      console.log(website);
+      const data = await getWebsiteData();
+      console.log(data);
+      setState(data);
     }
   };
 
