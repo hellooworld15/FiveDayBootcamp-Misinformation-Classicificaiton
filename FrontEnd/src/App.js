@@ -20,7 +20,7 @@ function App() {
         <h1>IDEA NAME HERE</h1>
         <SearchButton setState={interceptSetState} />
         <CriteriaRender state={state} />
-        <ExampleRender />
+        <ExampleRender state={state} />
         {/* <CriteriaRender /> */}
       </div>
     </div>
