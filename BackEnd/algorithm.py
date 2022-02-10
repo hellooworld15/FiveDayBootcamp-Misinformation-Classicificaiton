@@ -3,6 +3,7 @@ import random
 import selenium
 import time
 import pandas as pd
+import json
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver import ChromeOptions
@@ -41,14 +42,26 @@ def has_trusted_domain(link):
   return False
 
 def has_external_sources(link):
-  return False
+  num = random.randint(0, 1)
+  if num <= 0.5:
+    return True
+  else:
+    return False
 
 def has_updated(link):
-  return False
+  num = random.randint(0, 1)
+  if num <= 0.5:
+    return True
+  else:
+    return False
 
 def has_typo_errors(link):
   #API not returning correct values
-  return False
+  num = random.randint(0, 1)
+  if num <= 0.5:
+    return True
+  else:
+    return False
 
 ### MODEL ###
 
@@ -62,7 +75,8 @@ def classification_algorithm(link):
   results[3] = has_updated(link)
   results[4] = has_typo_errors(link)
   
-  print(results)
-  return results
+  with open('results.txt', 'a') as f:
+    f.write("\n" + str(link) + ' | ' + str(results)) #key: website, values: array
 
+# Run classification algorithm and send output to results.txt
 classification_algorithm(link)
