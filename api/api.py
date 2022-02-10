@@ -12,5 +12,7 @@ def get_current_time():
 
 @app.route("/website")
 def get_website():
-
-    return website_algorithm.classification_algorithm("https://www.health.nsw.gov.au/")
+    data = website_algorithm.classification_algorithm("https://www.health.nsw.gov.au/")
+    print("HI")
+    print(data)
+    return data

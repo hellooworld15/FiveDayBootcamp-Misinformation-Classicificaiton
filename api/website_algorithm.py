@@ -14,7 +14,7 @@ from spellchecker import SpellChecker
 from bs4 import BeautifulSoup
 from htmldate import find_date
 from datetime import datetime as dt
-
+import os
 
 # Take input from front-end
 link = "https://www.health.nsw.gov.au/"
@@ -22,9 +22,15 @@ options = ChromeOptions()
 options.add_argument("--headless")
 
 # Web-scraper to collect data
-driver = webdriver.Chrome(
-    ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install(), options=options
-)
+
+
+if "PLATFORM" in os.environ and os.environ["PLATFORM"] == "arch-linux":
+    driver = webdriver.Chrome(
+        ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install(), options=options
+    )
+else:
+    driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+
 driver.get(link)
 
 ### METRICS ###
@@ -103,11 +109,11 @@ def has_typo_errors(link):
 
 def classification_algorithm(link):
     results = {
-        has_past_content: has_past_content(link),
-        has_trusted_domain: has_trusted_domain(link),
-        has_external_sources: has_external_sources(link),
-        has_updated: has_updated(link),
-        has_typo_errors: has_typo_errors(link),
+        "has_past_content": has_past_content(link),
+        "has_trusted_domain": has_trusted_domain(link),
+        "has_external_sources": has_external_sources(link),
+        "has_updated": has_updated(link),
+        "has_typo_errors": has_typo_errors(link),
     }
 
     return results
