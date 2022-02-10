@@ -4,6 +4,9 @@
   align-content: center;
   flex-direction: column;
   justify-content: center;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
   ul {
     margin: 0px;
     padding: 0px;
@@ -13,10 +16,12 @@
     list-style-type: none;
     display: flex;
     padding: 6px;
+    justify-content: center;
 
     .contain {
       display: flex;
-      width: 80%;
+      width: 70%;
+      justify-content: center;
     }
     .icon {
       width: 39px;
