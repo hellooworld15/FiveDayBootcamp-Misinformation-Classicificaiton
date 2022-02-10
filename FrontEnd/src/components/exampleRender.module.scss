@@ -17,9 +17,35 @@
     position: relative;
     .resultsContainer {
       position: absolute;
-      left: 50px;
-      .score {
-        font-size: 48px;
+      left: 0px;
+      color: rgb(102, 3, 36);
+
+      background: rgba(233, 171, 192, 0.9);
+      padding: 10px;
+      border-radius: 15px;
+      border: rgb(139, 0, 46) 2px solid;
+      display: flex;
+      flex-direction: column;
+
+      .contain {
+        font-size: 20px;
+        display: flex;
+        .icon {
+          //   background-color: rgba(253, 67, 129, 0.2);
+          margin-right: 10px;
+        }
+      }
+      .horizontal {
+        display: flex;
+        .score {
+          font-weight: 700;
+          font-size: 50px;
+        }
+        .learn_more {
+          padding-left: 10px;
+          font-size: 10px;
+          font-weight: 700;
+        }
       }
     }
     img {
