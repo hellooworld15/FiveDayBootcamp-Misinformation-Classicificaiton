@@ -5,13 +5,28 @@
   flex-direction: column;
   justify-content: center;
   border-radius: 15px;
+  width: 60%;
+  margin: 0 auto;
 
   .render_example {
     background-color: white;
     padding: 5px;
     font-size: 24px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    .resultsContainer {
+      position: absolute;
+      left: 50px;
+      .score {
+        font-size: 48px;
+      }
+    }
     img {
       width: 30px;
+    }
+    a {
+      vertical-align: middle;
     }
   }
 
