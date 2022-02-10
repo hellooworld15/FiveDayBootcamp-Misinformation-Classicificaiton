@@ -1,0 +1,6 @@
+
+https://www.health.nsw.gov.au/ | [False, True, True, False, False]
+https://www.health.nsw.gov.au/ | [True, True, False, False, True]
+https://www.health.nsw.gov.au/ | [True, True, False, False, False]
+https://www.health.nsw.gov.au/ | [True, True, True, True, True]
+https://www.health.nsw.gov.au/ | [False, True, True, True, True]
